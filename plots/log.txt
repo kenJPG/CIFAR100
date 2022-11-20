@@ -2147,3 +2147,4 @@ Epoch: 71 | Train Loss: 0.05210 	Val Loss: 4.07956 	Train Acc: 0.983 	Val Acc: 0
 Epoch: 72 | Train Loss: 0.04730 	Val Loss: 3.72886 	Train Acc: 0.985 	Val Acc: 0.634
 Epoch: 73 | Train Loss: 0.03752 	Val Loss: 3.76458 	Train Acc: 0.988 	Val Acc: 0.629
 Epoch: 74 | Train Loss: 0.02984 	Val Loss: 4.06629 	Train Acc: 0.991 	Val Acc: 0.625
+<class '__main__.ResNeXt'>
