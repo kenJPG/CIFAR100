@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>cifar_100 copy</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>cifar_100</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14583,7 +14583,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">DEBUG</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">MODEL_DEBUG</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">MODEL_IMPROVE_DEBUG</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">GPU_COUNT</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">GPU_COUNT</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">WINDOWS</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 
@@ -15957,22 +15957,6 @@ class="
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">DEBUG</span><span class="p">:</span>
 	<span class="n">train_data</span> <span class="o">=</span> <span class="n">TorchDataset</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 	<span class="n">val_data</span> <span class="o">=</span> <span class="n">TorchDataset</span><span class="p">(</span><span class="n">X_val</span><span class="p">,</span> <span class="n">y_val</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[67]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">DEBUG</span><span class="p">:</span>
 	<span class="n">test_data</span> <span class="o">=</span> <span class="n">TorchDataset</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 </pre></div>
 
@@ -16311,14 +16295,14 @@ Requirement already satisfied: colorama in c:\users\kenne\anaconda3\envs\pytorch
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[78]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">DEBUG</span><span class="p">:</span>
 	<span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">()</span>
 	<span class="n">res_model</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">train_model</span><span class="p">(</span>
 		<span class="s1">&#39;ResNet-S Feature Extractor&#39;</span><span class="p">,</span> <span class="n">ResNetS</span><span class="p">,</span> <span class="c1"># model</span>
-		<span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;lr&#39;</span><span class="p">:</span> <span class="mf">1e-3</span> <span class="o">*</span> <span class="p">(</span><span class="n">GPU_COUNT</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;weight_decay&#39;</span><span class="p">:</span> <span class="mf">1e-5</span><span class="p">},</span> <span class="c1"># optimizer</span>
+		<span class="n">optim</span><span class="o">.</span><span class="n">AdamW</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;lr&#39;</span><span class="p">:</span> <span class="mf">1e-3</span> <span class="o">*</span> <span class="p">(</span><span class="n">GPU_COUNT</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;weight_decay&#39;</span><span class="p">:</span> <span class="mf">1e-5</span><span class="p">},</span> <span class="c1"># optimizer</span>
 		<span class="n">train_data</span><span class="p">,</span> <span class="c1"># data</span>
 		<span class="n">epochs</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
 		<span class="n">val_data</span> <span class="o">=</span> <span class="n">val_data</span><span class="p">,</span>
@@ -16411,7 +16395,7 @@ Requirement already satisfied: colorama in c:\users\kenne\anaconda3\envs\pytorch
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now that we have a trained a simple and small ResNet feature extractor, we can <strong>use its feature mapping</strong>. We cut off the last layers of the model below.</p>
+<p>Now that we have a trained a simple and small ResNet feature extractor, we can <strong>use its feature mapping</strong> to give us some level of information. We cut off the last layers of the model below.</p>
 
 </div>
 </div>
@@ -17025,7 +17009,20 @@ class="
 <ul>
     <li>Rotational augmentation are likely to be useful (at least for <code>cans</code>)</strong>
     <li>Color augmentations are also useful</strong>
-</ul><p>As such we'll with performing an <strong>augmentation algorithm</strong> called <strong>AugMix</strong> (Hendrycks et al., 2020)</p>
+</ul><p>As such we'll perform an <strong>augmentation algorithm</strong> called <strong>AugMix</strong> (Hendrycks et al., 2020)</p>
+<p><img src="plots/augmix.PNG" alt=""></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The problem with new type of augmentation in general, is that they tend to stray very far from the image. AugMix combats this by limiting the amount of contribution each transformation can bring to the final image.</p>
 
 </div>
 </div>
@@ -18243,7 +18240,6 @@ The kernel sizes are reduced from <strong>[7, 3, 3]</strong> to <strong>[5, 3, 3
 		<span class="n">xs</span> <span class="o">=</span> <span class="n">xs</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pool</span> <span class="o">==</span> <span class="s1">&#39;mean&#39;</span> <span class="k">else</span> <span class="n">xs</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
 
 		<span class="n">xs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mlp_head</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
-		<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;xs:&#39;</span><span class="p">,</span> <span class="n">xs</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 		<span class="k">return</span> <span class="n">xs</span>
 </pre></div>
 
@@ -18309,7 +18305,7 @@ The kernel sizes are reduced from <strong>[7, 3, 3]</strong> to <strong>[5, 3, 3
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18430,53 +18426,6 @@ The kernel sizes are reduced from <strong>[7, 3, 3]</strong> to <strong>[5, 3, 3
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-intense-fg ansi-bold">In [16], line 3</span>
-<span class="ansi-green-fg">      1</span> # Code adapted from https://github.com/prlz77/ResNeXt.pytorch/blob/master/models/model.py
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 3</span> class ResNeXtBottleneck(nn.Module):
-<span class="ansi-green-fg">      4</span> 	&#34;&#34;&#34;
-<span class="ansi-green-fg">      5</span> 	RexNeXt bottleneck type C (https://github.com/facebookresearch/ResNeXt/blob/master/models/resnext.lua)
-<span class="ansi-green-fg">      6</span> 	&#34;&#34;&#34;
-<span class="ansi-green-fg">      7</span> 	def __init__(self, in_channels, out_channels, stride, cardinality, widen_factor, activation = F.relu):
-
-Cell <span class="ansi-green-intense-fg ansi-bold">In [16], line 7</span>, in <span class="ansi-cyan-fg">ResNeXtBottleneck</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
-<span class="ansi-green-fg">      3</span> class ResNeXtBottleneck(nn.Module):
-<span class="ansi-green-fg">      4</span> 	&#34;&#34;&#34;
-<span class="ansi-green-fg">      5</span> 	RexNeXt bottleneck type C (https://github.com/facebookresearch/ResNeXt/blob/master/models/resnext.lua)
-<span class="ansi-green-fg">      6</span> 	&#34;&#34;&#34;
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 7</span> 	def __init__(self, in_channels, out_channels, stride, cardinality, widen_factor, activation = F.relu):
-<span class="ansi-green-fg">      8</span> 		&#34;&#34;&#34; Constructor
-<span class="ansi-green-fg">      9</span> 		Args:
-<span class="ansi-green-fg">     10</span> 			in_channels: input channel dimensionality
-<span class="ansi-green-intense-fg ansi-bold">   (...)</span>
-<span class="ansi-green-fg">     14</span> 			widen_factor: factor to reduce the input dimensionality before convolution.
-<span class="ansi-green-fg">     15</span> 		&#34;&#34;&#34;
-<span class="ansi-green-fg">     16</span> 		super(ResNeXtBottleneck, self).__init__()
-
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;F&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -19766,6 +19715,117 @@ The ideas are quite simple:</p>
 
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">myList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;otter&#39;</span><span class="p">,</span> <span class="s1">&#39;bowl&#39;</span><span class="p">,</span> <span class="s1">&#39;willow_tree&#39;</span><span class="p">,</span> <span class="s1">&#39;girl&#39;</span><span class="p">,</span> <span class="s1">&#39;boy&#39;</span><span class="p">]</span>
+<span class="n">display_images</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">myList</span><span class="p">:</span>
+	<span class="n">interested_images</span> <span class="o">=</span> <span class="n">train_data</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">classes</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">train_data</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">==</span> <span class="n">item</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+		<span class="n">random_idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">interested_images</span><span class="p">))</span>
+		<span class="n">display_images</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">interested_images</span><span class="p">[</span><span class="n">random_idx</span><span class="p">])</span>
+		<span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+<span class="n">imshow</span><span class="p">(</span><span class="n">display_images</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">labels</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="plots/worst_class.PNG" alt=""></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We observe:</p>
+<ul>
+    <li>The model appears to struggle with the above classes the most</li>
+    <li>If we visualize a few examples of the images, we see that sometimes classes such as <code>otters</code> do not take up majority of the image</li>
+    <li>This leads to the model not finding what it needs to identify</li>
+    <li>It also appears that trying to distinguish between girl and boy also appears to be difficult</li>
+    <li>This may be because CIFAR100 has <strong>100 classes</strong>, with drastically different classes. Thus, with the training data being more towards larger differences of images, fine details such as girl/boy difference may not have been picked up by the model.</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">myList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;wardrobe&#39;</span><span class="p">,</span> <span class="s1">&#39;road&#39;</span><span class="p">,</span> <span class="s1">&#39;motorcycle&#39;</span><span class="p">,</span> <span class="s1">&#39;skunk&#39;</span><span class="p">]</span>
+<span class="n">display_images</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">myList</span><span class="p">:</span>
+	<span class="n">interested_images</span> <span class="o">=</span> <span class="n">train_data</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">classes</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">train_data</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">==</span> <span class="n">item</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+		<span class="n">random_idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">interested_images</span><span class="p">))</span>
+		<span class="n">display_images</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">interested_images</span><span class="p">[</span><span class="n">random_idx</span><span class="p">])</span>
+		<span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+<span class="n">imshow</span><span class="p">(</span><span class="n">display_images</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">labels</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="plots/best_class.png" alt=""></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We observe:</p>
+<ul>
+    <li>The best class seems to be <code>skunk</code></li>
+    <li>This makes sense as the striking line in the middle is an easy tell tale sign of a skunk</li>
+    <li><code>road</code> will also likely not have that much of a difference  between images, and thus is easy to identify</li>
+    <li>It also appears that <code>motorcycles</code>, <code>wardrobes</code> and <code>oranges</code> are distinct enough in their own way, such that the model was able to successfully identify a massive majority of them</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -19946,6 +20006,34 @@ The ideas are quite simple:</p>
 
 </div>
 
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loss_func</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">loss_func</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">!=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">label</span><span class="p">)))))</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argpartition</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">10</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span>
+
+<span class="n">true_labels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">classes</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">x</span><span class="p">)],</span> <span class="n">label</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()))</span>
+<span class="n">pred_labels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">classes</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">x</span><span class="p">)],</span> <span class="n">output</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()))</span>
+
+<span class="n">imshow</span><span class="p">(</span>
+	<span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">input_list</span><span class="p">)[</span><span class="n">idx</span><span class="p">][:],</span>
+	<span class="p">[</span><span class="sa">f</span><span class="s1">&#39;True: </span><span class="si">{</span><span class="n">true</span><span class="si">}</span><span class="se">\n</span><span class="s1">Pred:</span><span class="si">{</span><span class="n">pred</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">true</span><span class="p">,</span> <span class="n">pred</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">true_labels</span><span class="p">,</span> <span class="n">pred_labels</span><span class="p">)]</span>
+	<span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
 </div>
 
 </div>
